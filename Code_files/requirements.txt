@@ -1,0 +1,15 @@
+# Core deep learning + GPU
+torch>=2.1.0
+transformers>=4.42.0
+tokenizers>=0.19.0
+
+# Numerical + plotting
+numpy>=1.26.0
+matplotlib>=3.8.0
+
+# Optional (for result export / progress)
+tqdm>=4.66.0
+pandas>=2.2.0
+
+# Jupyter (only if running experiments in notebook form)
+jupyterlab>=4.1.0
