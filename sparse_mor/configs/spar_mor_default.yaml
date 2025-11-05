@@ -1,0 +1,26 @@
+# Default configuration for production use
+sparsity:
+  k: 200  # Top-K values to keep per token
+  gamma_renorm: true
+
+mor:
+  depths: [1, 2, 3]  # Recursion depths
+  num_branches: 3    # Number of parallel branches
+  gate_hidden: 64    # Hidden dim for gating network
+
+training:
+  batch_size: 8
+  sequence_length: 32
+  learning_rate: 5e-5
+  num_epochs: 3
+  warmup_steps: 100
+  gradient_accumulation: 1
+
+inference:
+  batch_size: 8
+  sequence_length: 32
+  use_flash_attention: true
+
+device:
+  precision: "fp16"
+  compile: true  # Use torch.compile for speedup

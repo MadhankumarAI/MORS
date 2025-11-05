@@ -1,0 +1,26 @@
+# Configuration optimized for high similarity (≥96-97%)
+sparsity:
+  k: 300  # Increased from 200 to improve similarity
+  gamma_renorm: true
+
+mor:
+  depths: [1, 2, 3]
+  num_branches: 3
+  gate_hidden: 128  # Increased capacity for better refinement
+
+training:
+  batch_size: 8
+  sequence_length: 32
+  learning_rate: 3e-5  # Reduced for stability
+  num_epochs: 5      # Increased training time
+  warmup_steps: 200
+  gradient_accumulation: 2
+
+inference:
+  batch_size: 8
+  sequence_length: 32
+  use_flash_attention: true
+
+device:
+  precision: "fp16"
+  compile: true
